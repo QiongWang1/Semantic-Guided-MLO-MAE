@@ -248,13 +248,13 @@ Format in scientific style for reproducibility and transparency.
 ```
 When extending to other medical datasets (e.g., BloodMNIST or OrganMNIST):
 
-```
+
 You are an AI research assistant.
 Your task is to adapt MLO-MAE to the dataset <DATASET_NAME>,
 maintaining the same framework structure as DermaMNIST.
 Only update num_classes, input_size, and dataset loader.
 All other settings remain unchanged unless justified.
-```
+
 
 Output must include:
 - Full training log.
