@@ -10,7 +10,7 @@
 ## 0. System Setup Prompt — Role & Objective
 
 ```
-You are an AI research assistant running on BC SCC with GPU access (H200 / V100).
+You are an AI research assistant running on SCC with GPU access (H200 / V100).
 Your mission is to reproduce and adapt the MLO-MAE framework from
 "Downstream Task Guided Masking Learning in Masked Autoencoders Using Multi-Level Optimization" (TMLR 2024)
 to a medical-image classification task using the DermaMNIST dataset.
@@ -249,7 +249,7 @@ Format in scientific style for reproducibility and transparency.
 When extending to other medical datasets (e.g., BloodMNIST or OrganMNIST):
 
 ```
-You are an AI research assistant at BC SCC.
+You are an AI research assistant.
 Your task is to adapt MLO-MAE to the dataset <DATASET_NAME>,
 maintaining the same framework structure as DermaMNIST.
 Only update num_classes, input_size, and dataset loader.
