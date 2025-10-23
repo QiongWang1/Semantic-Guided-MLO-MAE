@@ -8,7 +8,7 @@ The goal is to evaluate whether Claude Code can automatically reproduce and adap
 
 - **Dataset**: [DermaMNIST](https://medmnist.com/) (7-class skin lesion classification, MC)
 - **Framework**: Multi-Level Optimization for Masked Autoencoders
-- **Final Test Accuracy**: **76.71%** ⭐
+- **Final Test Accuracy**: **76.96%%** ⭐
 
 This result demonstrates that MLO-MAE can generalize effectively beyond natural images, achieving strong performance on medical data with limited supervision.
 
@@ -18,7 +18,7 @@ This result demonstrates that MLO-MAE can generalize effectively beyond natural 
 
 | Metric | Value |
 |--------|-------|
-| **Test Accuracy** | **76.71%** |
+| **Test Accuracy** | **76.96%%** |
 | **Weighted F1** | **75.05%** |
 | **Best Class** | Melanocytic nevi (93.29%) |
 | **Worst Class** | Dermatofibroma (21.74%) |
