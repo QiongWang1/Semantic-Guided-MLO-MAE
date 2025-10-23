@@ -92,6 +92,29 @@ This result demonstrates that MLO-MAE can generalize effectively beyond natural 
 
 ## 4. Results and Analysis
 
+
+### 4.0 Improve the Version of Experiment and Comparison
+     updated at Oct 23
+
+| Metric | Baseline_MLO_MAE (Job 1792190) | Improve_MLO_MAE (Job 1793346) | Google AutoML Vision(benchmark) |
+|--------|----------------------|--------------------------------|---------------------|
+| **Best Test Accuracy** | **76.71%** | **76.96% 🏆** | **76.8%** |
+| **Final Test Accuracy** | 74.56% | 75.91% | - |
+| **Final Train Loss** | 0.299 | 0.040 | - |
+| **Final Test Loss** | 0.915 | 1.670 | - |
+| **Training Epochs** | 100 | 300 | - |
+| **Best Accuracy Epoch** | 39 | 60-61 | - |
+| **Model Architecture** | MLO-MAE ViT (32×32) | MLO-MAE ViT (32×32) | - |
+| **Batch Size** | 64 | 64 | - |
+| **Learning Rate** | 0.0001 | 0.0001 | - |
+| **Input Resolution** | 32×32 | 32×32 | - |
+| **Patch Size** | 2 | 2 | - |
+| **Optimizer** | AdamW | AdamW | - |
+| **Weight Decay** | 5e-05 | 5e-05 | - |
+
+
+
+
 ### 4.1 Results
 
 | Metric | Value |

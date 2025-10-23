@@ -263,3 +263,39 @@ Output must include:
 - summary report.
 ```
 ---
+
+## 12. Prompt for Improve Experiments Performance
+```
+Goal:
+Improve MLO-MAE performance on DermaMNIST to surpass 76.8% test accuracy with minimal cost (no architecture change, no large-scale retraining).
+
+Context:
+Current result = 76.71% (ViT-Base encoder, mask ratio=0.75, image size=32×32, pretrain 6.5h + finetune 1.5h on 2×H200 GPUs).
+
+Task:
+1. Focus on lightweight improvements to enhance accuracy and stability.
+2. Do NOT change model architecture or dataset.
+3. Modify only training configuration and optimization strategy.
+
+Optimization option:
+- Reduce mask_ratio from 0.75 → 0.65 to preserve lesion details.
+- Increase input image size to 64×64 for finer texture capture.
+- Extend fine-tuning epochs (e.g., 30 → 60).
+- Use cosine LR scheduler with warmup (5 epochs).
+- Add CutMix or Mixup augmentation.
+- Enable class reweighting or focal loss to handle imbalance.
+
+Deliverables:
+- Update the training configuration (YAML or script).
+- Re-run fine-tuning using the pre-trained checkpoint (avoid full re-pretrain).
+- Report final test accuracy, F1-score, and per-class results.
+- Generate brief analysis on which change most contributed
+
+Command examples to generate:
+- bash train_derma_tuned.sh (with logging)
+- tensorboard visualization link
+- auto-checkpoint selection (best.ckpt or last.ckpt)
+
+Output format:
+A single unified plan with modified parameters, estimated runtime, and expected accuracy improvement.
+```
