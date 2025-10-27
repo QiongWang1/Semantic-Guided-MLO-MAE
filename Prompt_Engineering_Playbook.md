@@ -2,7 +2,7 @@
 
 **Project**: Multi-Level Optimized Masked Autoencoder (MLO-MAE) on DermaMNIST  
 **Collaboration**: Qiong × Claude Code  
-**Result**: 78.30%  Test Accuracy  
+**Result**: 78.20%  Test Accuracy  
 **Goal**: Prompt design for AI-assisted reproduction and domain adaptation of a deep-learning framework(MLO_MAE) on medical images.
 
 ---

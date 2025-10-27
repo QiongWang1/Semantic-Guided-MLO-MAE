@@ -12,7 +12,7 @@ The goal is to compare the effectiveness of random-masking and learnable-masking
 - Evaluation Metrics: Accuracy, Precision, Recall, and F1-Score
 
 
-## 3. Results Summary
+## 3. Results and Comparative Evaluation
 
 
 ### 3.1 Comparative Performance Table 
@@ -46,13 +46,35 @@ MLO-MAE achieves the best balance across all metrics:
 This consistent dominance across metrics indicates robust performance across all classes, not just the dominant class.
 
 
-### 3.4  Random Masking vs. No Pretraining
+## 4. Overall Analysis
+### 4.1. Performance Trend
+
+Random masking (MAE/U-MAE) improves over vanilla ViT (+3%–4%).
+
+Learnable masking (SemMAE, AutoMAE, MLO-MAE) further improves performance, confirming that data-adaptive masking helps the model learn more meaningful features.
+
+MLO-MAE shows the best overall performance, exceeding AutoMAE by +4.3% accuracy and +4.5% F1-Score.
+
+### 4.2. Dataset Adaptation
+
+Unlike CIFAR or ImageNet, DermaMNIST has higher inter-class similarity and fewer samples; the advantage of multi-level optimization in MLO-MAE becomes more pronounced.
+
+### 4.3. Observations
+
+AutoMAE and SemMAE perform similarly (~74%), suggesting that adaptive but single-level optimization reaches a performance plateau.
+
+MLO-MAE achieves the best trade-off between mask selection and reconstruction loss balancing.
+
+
+## 5. Detailed Experimental Analysis 
+
+### 5.1  Random Masking vs. No Pretraining
 
 - Random masking methods (MAE: 74.11%, U-MAE: 73.72%) demonstrate clear improvements over the ViT baseline (70.62%), achieving **+3.49% to +3.10% accuracy gains**. This validates that masked autoencoding pretraining, even with simple random masking, provides meaningful representation learning benefits on medical images.
 
 -  **Key Observation:** The consistent ~3-4% improvement suggests that forcing the model to reconstruct randomly masked patches helps learn more robust and generalizable features, particularly valuable for the limited training data in DermaMNIST.
 
-### 3.5 Learnable Masking Advantages
+### 5.2 Learnable Masking Advantages
 - Learnable masking methods (SemMAE: 74.06%, AutoMAE: 73.87%, MLO-MAE: 78.20%) significantly outperform random masking approaches, with MLO-MAE achieving the most substantial gains.
 
 - **Performance Hierarchy:**
@@ -61,7 +83,7 @@ This consistent dominance across metrics indicates robust performance across all
 
    This hierarchy demonstrates that while adaptive masking helps, **multi-level optimization is critical** for maximizing performance on medical imaging tasks.
 
-### 3.6 Multi-Level Optimization Effectiveness
+### 5.3 Multi-Level Optimization Effectiveness
 MLO-MAE's superior performance (78.20% accuracy, 77.77% F1) over other learnable masking methods validates the hypothesis that:
 
 1. **Hierarchical feature importance varies** across different network depths
@@ -69,7 +91,7 @@ MLO-MAE's superior performance (78.20% accuracy, 77.77% F1) over other learnable
 3. **Balanced reconstruction objectives** across levels prevent overfitting to either fine-grained or coarse features
 
 
-### 3.7 Medical Imaging Challenges
+### 5.4 Medical Imaging Challenges
 Unlike natural image datasets (CIFAR-10, ImageNet), DermaMNIST presents unique challenges:
 
 - **High inter-class similarity:** Many skin lesions share similar visual characteristics
@@ -80,7 +102,7 @@ Unlike natural image datasets (CIFAR-10, ImageNet), DermaMNIST presents unique c
 **Impact:** The substantial performance gap between single-level and multi-level optimization (74% vs. 78%) is more pronounced than typically observed on natural images, suggesting that medical imaging particularly benefits from MLO_MAE.
 
 
-### 3.8 Training Convergence Analysis
+### 5.5 Training Convergence Analysis
 
 **Extended Training Benefits:**
 - Random masking methods (MAE, U-MAE) trained for 1000 epochs show gradual improvements
@@ -90,7 +112,7 @@ Unlike natural image datasets (CIFAR-10, ImageNet), DermaMNIST presents unique c
 **Convergence Observation:** While AutoMAE and SemMAE plateau around 74% accuracy, MLO-MAE continues improving, reaching 78.20%. This suggests that multi-level optimization has a higher performance ceiling but requires sufficient training time to reach it.
 
 
-## 4. Key Findings
+## 6. Key Findings
 
 1. **Learnable masking significantly outperforms random masking** on medical images, with MLO-MAE achieving 78.20% accuracy compared to 74.11% for MAE (+4.09% absolute improvement).
 
@@ -100,7 +122,7 @@ Unlike natural image datasets (CIFAR-10, ImageNet), DermaMNIST presents unique c
 
 4. **All masked autoencoding approaches improve over ViT**, validating the core premise that reconstruction-based pretraining enhances feature learning even on small medical datasets.
 
-### 4.1 Statistical Significance
+### 6.1 Statistical Significance
 
 - The 4.09% accuracy improvement of MLO-MAE over the best baseline (MAE: 74.11%) represents:
    - **82 additional correct predictions** on the 2,005-image test set
@@ -109,7 +131,7 @@ Unlike natural image datasets (CIFAR-10, ImageNet), DermaMNIST presents unique c
 
 
 
-## 5. Conclusion
+## 7. Conclusion
 
 This comprehensive evaluation on DermaMNIST demonstrates that **MLO-MAE significantly outperforms all baseline masked autoencoding methods**, achieving 78.20% accuracy and 77.77% F1-score. The results provide compelling evidence that:
 
@@ -121,7 +143,7 @@ The consistent 4+ percentage point improvements over state-of-the-art learnable 
 
 
 
-## 6. References 
+## 8. References 
 1. **ViT**
 Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Un- terthiner, Mostafa Dehghani, Matthias Minderer, Georg Heigold, Sylvain Gelly, et al. An image is worth 16x16 words: Transformers for image recognition at scale. arXiv preprint arXiv:2010.11929, 2020. 
 
