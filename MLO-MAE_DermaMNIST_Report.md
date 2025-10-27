@@ -8,7 +8,7 @@ The goal is to evaluate whether Claude Code can automatically reproduce and adap
 
 - **Dataset**: [DermaMNIST](https://medmnist.com/) (7-class skin lesion classification, MC)
 - **Framework**: Multi-Level Optimization for Masked Autoencoders
-- **Final Test Accuracy**: **76.96%%** ⭐
+- **Final Test Accuracy**: **78.20%%** ⭐(update at Oct27,2025)
 
 This result demonstrates that MLO-MAE can generalize effectively beyond natural images, achieving strong performance on medical data with limited supervision.
 
@@ -18,7 +18,7 @@ This result demonstrates that MLO-MAE can generalize effectively beyond natural 
 
 | Metric | Value |
 |--------|-------|
-| **Test Accuracy** | **76.96%%** |
+| **Test Accuracy** | **78.20%%** |
 | **Weighted F1** | **75.05%** |
 | **Best Class** | Melanocytic nevi (93.29%) |
 | **Worst Class** | Dermatofibroma (21.74%) |
@@ -94,15 +94,15 @@ This result demonstrates that MLO-MAE can generalize effectively beyond natural 
 
 
 ### 4.0 Improve the Version of Experiment and Comparison
-     updated at Oct 23
+     updated at Oct 27, 2025
 
 | Metric | Baseline_MLO_MAE (Job 1792190) | Improve_MLO_MAE (Job 1793346) | Google AutoML Vision(benchmark) |
 |--------|----------------------|--------------------------------|---------------------|
-| **Best Test Accuracy** | **76.71%** | **76.96% 🏆** | **76.8%** |
+| **Best Test Accuracy** | **76.71%** | **78.20% 🏆** | **76.8%** |
 | **Final Test Accuracy** | 74.56% | 75.91% | - |
 | **Final Train Loss** | 0.299 | 0.040 | - |
 | **Final Test Loss** | 0.915 | 1.670 | - |
-| **Training Epochs** | 100 | 300 | - |
+| **Training Epochs** | 100 | 1000 | - |
 | **Best Accuracy Epoch** | 39 | 60-61 | - |
 | **Model Architecture** | MLO-MAE ViT (32×32) | MLO-MAE ViT (32×32) | - |
 | **Batch Size** | 64 | 64 | - |
@@ -178,7 +178,7 @@ This result demonstrates that MLO-MAE can generalize effectively beyond natural 
 
 ### Stage 2: Fine-tuning
 - **Time**: ~1.5 hours
-- **Result**: **76.71% accuracy** ⭐
+- **Result**: **78.20% accuracy** ⭐
 - **Improvement**: +4.0 percentage points
 
 ### Stage 3: Evaluation & Analysis

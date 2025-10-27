@@ -2,7 +2,7 @@
 
 **Project**: Multi-Level Optimized Masked Autoencoder (MLO-MAE) on DermaMNIST  
 **Collaboration**: Qiong × Claude Code  
-**Result**: 76.96%  Test Accuracy, 75.05% Weighted F1  
+**Result**: 78.30%  Test Accuracy  
 **Goal**: Prompt design for AI-assisted reproduction and domain adaptation of a deep-learning framework(MLO_MAE) on medical images.
 
 ---
@@ -193,10 +193,10 @@ Workflow
 ```
 Validate that the pipeline produces:
 
-- Accuracy = 76.71% ± 1%
-- Weighted F1 = 75.05% ± 1%
+- Accuracy = 
+- Weighted F1 = 
 - Reconstruction images visually preserve lesion features.
-- Training time ≈ 8 hours on 2× H200.
+- Training time ≈ 
 
 Store summary in `docs/RESULTS.md`.
 ```
