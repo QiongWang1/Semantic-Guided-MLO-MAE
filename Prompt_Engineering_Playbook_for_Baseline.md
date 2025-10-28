@@ -1,4 +1,4 @@
-# Prompt Engineering Playbook for Baseline
+# Prompt Engineering Playbook for Evaluation of Baseline Methods
 
 ## 1. Objective
 
