@@ -1,4 +1,4 @@
-# Prompt Engineering Playbook_B
+# Prompt Engineering Playbook for Baseline
 
 ## 1. Objective
 
